@@ -574,6 +574,10 @@ header .navbar ul li a:hover{
   width: 98%;
   background: #1771e7;
 }
+.skills .container .col .bar .tensorflow:before{
+  width: 40%;
+  background: #ffae00;
+}
 .skills .container .col .bar .firebase:before{
   width: 40%;
   background: #ffae00;
