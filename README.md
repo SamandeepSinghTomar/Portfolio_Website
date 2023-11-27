@@ -1,7 +1,7 @@
 ## Portfolio-Website
 Portfolio website build using HTML5, CSS3 and JavaScript
 
-<a href="https://samandeep.me" target="_blank">**Visit Now** 🚀</a>
+<a href="https://samandeep.in" target="_blank">**Visit Now** 🚀</a>
 
 
 <h2>📬 Contact</h2>
