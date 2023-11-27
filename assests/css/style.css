@@ -535,11 +535,11 @@ header .navbar ul li a:hover{
   background: #2962ff;
 }
 .skills .container .col .bar .javascript:before{
-  width: 75%;
+  width: 90%;
   background: #ffd900;
 }
 .skills .container .col .bar .php:before{
-  width: 40%;
+  width: 90%;
   background: #8054c7;
 }
 .skills .container .col .bar .mysql:before{
@@ -547,7 +547,7 @@ header .navbar ul li a:hover{
   background: #f38b03;
 }
 .skills .container .col .bar .reactjs:before{
-  width: 30%;
+  width: 95%;
   background: #2962ff;
 }
 .skills .container .col .bar .java:before{
@@ -563,7 +563,7 @@ header .navbar ul li a:hover{
   background: #2fdf7e;
 }
 .skills .container .col .bar .nodejs:before{
-  width: 40%;
+  width: 80%;
   background: #298521;
 }
 .skills .container .col .bar .vcs:before{
@@ -575,11 +575,11 @@ header .navbar ul li a:hover{
   background: #1771e7;
 }
 .skills .container .col .bar .tensorflow:before{
-  width: 40%;
+  width: 80%;
   background: #ffae00;
 }
 .skills .container .col .bar .firebase:before{
-  width: 40%;
+  width: 97%;
   background: #ffae00;
 }
 
@@ -1146,3 +1146,28 @@ header .navbar ul li a:hover{
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+#blog {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    color: #333;
+}
+
+#blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-post {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

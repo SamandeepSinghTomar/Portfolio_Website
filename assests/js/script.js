@@ -45,7 +45,7 @@ function(){
         $("#favicon").attr("href","assests/images/favicon.png");
     }
     else {
-        document.title = "Come Back To Portfolio";
+        document.title = "Samandeep";
         $("#favicon").attr("href","assests/images/favhand.png");
     }
 });
@@ -53,7 +53,7 @@ function(){
 
 // <!-- typed js effect starts -->
     var typed = new Typed(".typing-text", {
-        strings: ["Data Science", "Full Stack Development", "Android development", "Database Management"],
+        strings: ["Data Science", "Full Stack Development", "Android development", "Startups"],
         loop: true,
         typeSpeed: 50,
 		backSpeed: 25,
