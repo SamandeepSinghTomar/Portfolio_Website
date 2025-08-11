@@ -73,9 +73,11 @@ function loader(){
     document.querySelector('.loader-container').classList.add('fade-out');
 }
 function fadeOut(){
-    setInterval(loader,500);
+    // use a one-time timeout instead of an interval to avoid repeatedly
+    // querying the DOM and re-adding the class after it has been applied
+    setTimeout(loader,500);
 }
-window.onload = fadeOut;
+window.addEventListener('load', fadeOut);
 // pre loader end
 
 // disable developer mode
