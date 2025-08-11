@@ -142,4 +142,35 @@ srtop.reveal('.work .box',{interval: 200});
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline',{delay: 400});
-srtop.reveal('.experience .timeline .container',{interval: 400}); 
+srtop.reveal('.experience .timeline .container',{interval: 400});
+
+// Fetch and render blog posts
+async function loadBlogPosts() {
+    const container = document.getElementById('blog-posts');
+    if (!container) return;
+    try {
+        const response = await fetch('https://api.github.com/repos/SamandeepSinghTomar/Portfolio_Website/issues?labels=blog&state=open');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const posts = await response.json();
+        container.innerHTML = '';
+        if (posts.length === 0) {
+            container.innerHTML = '<p>No blog posts yet.</p>';
+            return;
+        }
+        posts.forEach(postData => {
+            const post = document.createElement('div');
+            post.className = 'blog-post';
+            const title = document.createElement('h3');
+            title.textContent = postData.title;
+            const body = document.createElement('div');
+            body.innerHTML = marked.parse(postData.body || '');
+            post.appendChild(title);
+            post.appendChild(body);
+            container.appendChild(post);
+        });
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', loadBlogPosts);
