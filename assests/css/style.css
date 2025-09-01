@@ -1184,6 +1184,7 @@ header .navbar ul li a:hover{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .theme-switch {
   position: fixed;
   top: 1.5rem;
@@ -1246,4 +1247,31 @@ body.dark-mode {
   --heading-color: #e0e0e0;
   --heading-accent: #bb86fc;
   --link-hover: #bb86fc;
+
+#theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  font-size: 2.4rem;
+  color: #0E2431;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.5s;
+}
+
+#theme-toggle.animate {
+  transform: rotate(360deg);
+}
+
+body.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.dark-mode img,
+body.dark-mode video,
+body.dark-mode #theme-toggle {
+  filter: invert(1) hue-rotate(180deg);
+  color: #fff;
 }

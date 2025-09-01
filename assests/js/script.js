@@ -187,5 +187,20 @@ if (themeToggle) {
   themeToggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode', themeToggle.checked);
     localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+  const themeIcon = document.getElementById('theme-icon');
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeIcon.classList.replace('fa-moon', 'fa-sun');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    themeIcon.classList.toggle('fa-sun', dark);
+    themeIcon.classList.toggle('fa-moon', !dark);
+    themeToggle.classList.add('animate');
+    setTimeout(() => themeToggle.classList.remove('animate'), 300);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
   });
 }
