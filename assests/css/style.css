@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
+:root {
+  --bg-color: #f7f7f7;
+  --text-color: #0E2431;
+  --header-bg: #fff;
+  --header-text: #0E2431;
+  --heading-color: rgb(32, 32, 32);
+  --heading-accent: rgb(115, 3, 167);
+  --link-hover: #011aff;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -16,7 +26,8 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  background: #f7f7f7;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -66,7 +77,7 @@ header{
   justify-content: space-between;
   padding: 1.7rem 10%;
   height: 6.5rem;
-  background-color: #fff;
+  background-color: var(--header-bg);
   box-shadow: 0 1px 4px rgba(146,161,176,.3);
 }
 section{
@@ -75,18 +86,18 @@ section{
 }
 .heading{
   font-size: 3.5rem;
-  color: rgb(32, 32, 32);
+  color: var(--heading-color);
   font-weight: 800;
   text-align: center;
 }
 .heading span{
-  color: rgb(115, 3, 167);
+  color: var(--heading-accent);
 }
 header .logo{
   font-size: 1.9rem;
   font-weight: 800;
   text-decoration: none;
-  color: #0E2431;
+  color: var(--header-text);
 }
 header .logo i {
   font-size: 2.2rem;
@@ -105,7 +116,7 @@ header .navbar li{
 }
 header .navbar ul li a{
   font-size: 1.57rem;
-  color: #0E2431;
+  color: var(--header-text);
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.04rem;
@@ -113,8 +124,8 @@ header .navbar ul li a{
 }
 header .navbar ul li a.active,
 header .navbar ul li a:hover{
-  color: #011aff;
-  border-bottom: .2rem solid #011aff;
+  color: var(--link-hover);
+  border-bottom: .2rem solid var(--link-hover);
   padding: .5rem 0;
 }
 /* navbar ends */
@@ -1172,4 +1183,67 @@ header .navbar ul li a:hover{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.theme-switch {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 1001;
+}
+
+.theme-switch input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.theme-switch label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 26px;
+  background: #e0e0e0;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.theme-switch label:before {
+  content: '\\f186';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #121212;
+  color: #f7f7f7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.theme-switch input:checked + label {
+  background: #4d4d4d;
+}
+
+.theme-switch input:checked + label:before {
+  transform: translateX(24px);
+  content: '\\f185';
+  background: #f7f7f7;
+  color: #ffa500;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1e1e1e;
+  --header-text: #e0e0e0;
+  --heading-color: #e0e0e0;
+  --heading-accent: #bb86fc;
+  --link-hover: #bb86fc;
 }
