@@ -46,7 +46,7 @@ function(){
     }
     else {
         document.title = "Samandeep";
-        $("#favicon").attr("href","assests/images/favhand.png");
+        $("#favicon").attr("href","assests/images/favicon.png");
     }
 });
 
