@@ -31,6 +31,25 @@
     </div>
   </div>
 
+  <div id="privacy-lock" class="privacy-lock" role="dialog" aria-modal="true" aria-labelledby="privacy-lock-title">
+    <div class="privacy-lock__panel">
+      <div class="privacy-lock__icon" aria-hidden="true">
+        <i class="fas fa-lock"></i>
+      </div>
+      <h2 id="privacy-lock-title">Locked for privacy</h2>
+      <p>Enter the password to unlock this portfolio.</p>
+      <form id="privacy-lock-form" class="privacy-lock__form">
+        <label class="privacy-lock__label" for="privacy-password">Password</label>
+        <input id="privacy-password" type="password" placeholder="Enter password" autocomplete="current-password"
+          required>
+        <button type="submit" class="privacy-lock__button">Unlock</button>
+        <p id="privacy-lock-error" class="privacy-lock__error" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="page-content">
+
   <!-- navbar starts -->
   <header>
     <a href="/Portfolio-Website" class="logo"> Samandeep</a>
@@ -536,6 +555,7 @@
   <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
   <!-- scroll back to top -->
 
+  </div>
 
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
   <!-- jquery cdn -->
