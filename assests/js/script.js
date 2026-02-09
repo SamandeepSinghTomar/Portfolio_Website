@@ -196,3 +196,48 @@ if (themeToggle && themeIcon) {
     localStorage.setItem('theme', dark ? 'dark' : 'light');
   });
 }
+
+const lockOverlay = document.getElementById('privacy-lock');
+const lockForm = document.getElementById('privacy-lock-form');
+const lockInput = document.getElementById('privacy-password');
+const lockError = document.getElementById('privacy-lock-error');
+const requiredPassword = 'drowssap';
+
+function unlockPortfolio() {
+  document.body.classList.remove('is-locked');
+  if (lockOverlay) {
+    lockOverlay.classList.add('is-hidden');
+  }
+  sessionStorage.setItem('portfolioUnlocked', 'true');
+}
+
+function lockPortfolio() {
+  document.body.classList.add('is-locked');
+  if (lockOverlay) {
+    lockOverlay.classList.remove('is-hidden');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!lockOverlay || !lockForm || !lockInput) return;
+  if (sessionStorage.getItem('portfolioUnlocked') === 'true') {
+    unlockPortfolio();
+    return;
+  }
+  lockPortfolio();
+  lockInput.focus();
+  lockForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const entered = lockInput.value.trim();
+    if (entered === requiredPassword) {
+      lockInput.value = '';
+      if (lockError) lockError.textContent = '';
+      unlockPortfolio();
+      return;
+    }
+    if (lockError) {
+      lockError.textContent = 'Incorrect password. Please try again.';
+    }
+    lockInput.select();
+  });
+});

@@ -44,6 +44,111 @@ body {
   line-height: 1.6;
 }
 
+body.is-locked {
+  overflow: hidden;
+}
+
+#page-content {
+  transition: filter 0.3s ease;
+}
+
+body.is-locked #page-content {
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.privacy-lock {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+  padding: 2.4rem;
+}
+
+.privacy-lock.is-hidden {
+  display: none;
+}
+
+.privacy-lock__panel {
+  background: var(--surface);
+  color: var(--text-color);
+  width: min(420px, 100%);
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.privacy-lock__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--heading-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.privacy-lock__panel h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+  color: var(--heading-color);
+}
+
+.privacy-lock__panel p {
+  font-size: 1.4rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.privacy-lock__form {
+  display: grid;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+.privacy-lock__label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.privacy-lock__form input {
+  padding: 1rem 1.2rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--border);
+  font-size: 1.4rem;
+  font-family: inherit;
+}
+
+.privacy-lock__button {
+  background: var(--heading-accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 1rem 1.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.privacy-lock__button:hover {
+  background: #1d4ed8;
+}
+
+.privacy-lock__error {
+  font-size: 1.2rem;
+  color: #dc2626;
+  min-height: 1.6rem;
+}
+
 html::-webkit-scrollbar {
   width: 0.8rem;
 }
